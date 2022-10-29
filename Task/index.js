@@ -1,12 +1,12 @@
 export const Task = (props) => {
-    const { name, due, done } = props;
-  
-    let checkClass = "";
-    if (done) {
-      checkClass = "✓";
-    }
-  
-    return `
+  const { name, due, done } = props;
+
+  let checkClass = "";
+  if (done) {
+    checkClass = "✓";
+  }
+
+  return `
    <div class="task">
         <div class="task__body">
           <div class="task__name">${name}</div>
@@ -15,5 +15,4 @@ export const Task = (props) => {
         <div class="task__done">${checkClass}</div>
       </div>
       `;
-  };
-  
+};
