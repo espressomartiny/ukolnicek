@@ -35,3 +35,17 @@ const renderTasks = (items) => {
 fetch("https://apps.kodim.cz/daweb/trening-api/apis/tasks-api/tasks")
 .then((response) => response.json())
 .then((data) => renderTasks(data));
+
+
+const checkbox = document.querySelector('#checkbox-undone');
+checkbox.addEventListener('change', event => {
+  if (event.checked === true) {
+    fetch('https://apps.kodim.cz/daweb/trening-api/apis/tasks-api/tasks?done=false')
+    .then((response) => response.json())
+    .then((data) => renderTasks(data));
+  } else {
+    fetch('https://apps.kodim.cz/daweb/trening-api/apis/tasks-api/tasks')
+    .then((response) => response.json())
+    .then((data) => renderTasks(data));
+  }
+})
