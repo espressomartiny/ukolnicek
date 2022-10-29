@@ -1,10 +1,5 @@
 console.log("funguju!");
 
-// fetch("https://apps.kodim.cz/daweb/trening-api/apis/tasks-api/tasks")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//   });
 
 // fetch("https://apps.kodim.cz/daweb/trening-api/apis/tasks-api/tasks?done=true")
 //   .then((response) => response.json())
@@ -35,3 +30,8 @@ const renderTasks = (items) => {
   const tasksElement = document.querySelector(".todo__tasks");
   tasksElement.innerHTML = items.map((item) => Task(item)).join("");
 };
+
+
+fetch("https://apps.kodim.cz/daweb/trening-api/apis/tasks-api/tasks")
+.then((response) => response.json())
+.then((data) => renderTasks(data));
