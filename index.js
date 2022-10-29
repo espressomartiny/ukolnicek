@@ -39,7 +39,7 @@ fetch("https://apps.kodim.cz/daweb/trening-api/apis/tasks-api/tasks")
 
 const checkbox = document.querySelector('#checkbox-undone');
 checkbox.addEventListener('change', event => {
-  if (event.checked === true) {
+  if (checkbox.checked == true) {
     fetch('https://apps.kodim.cz/daweb/trening-api/apis/tasks-api/tasks?done=false')
     .then((response) => response.json())
     .then((data) => renderTasks(data));
